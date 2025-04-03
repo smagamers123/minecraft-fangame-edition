@@ -1,62 +1,35 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+window.onload = function() {
+    const intro = document.getElementById('intro');
+    const menu = document.getElementById('menu');
+    const botonJugarImg = document.getElementById('boton-jugar-img');
+    let botonNormal = 'assets/menu/boton_play.png';
+    let botonPresionado = 'assets/menu/boton_play_presionado.png'; // Asegúrate de tener esta imagen
 
-.intro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 2s ease-in-out;
-}
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+            intro.style.display = 'none';
+            menu.style.display = 'block';
+        }, 2000);
+    }, 3000);
 
-.intro img {
-    max-width: 80%;
-    max-height: 80%;
-}
+    document.getElementById('jugar').addEventListener('mousedown', () => {
+        botonJugarImg.src = botonPresionado;
+    });
 
-.menu {
-    text-align: center;
-    color: white;
-}
+    document.getElementById('jugar').addEventListener('mouseup', () => {
+        botonJugarImg.src = botonNormal;
+    });
 
-.menu-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-}
+    document.getElementById('jugar').addEventListener('click', () => {
+        alert('¡A jugar!');
+    });
 
-.menu button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    margin: 20px auto;
-    cursor: pointer;
-    width: 200px;
-}
+    document.getElementById('opciones').addEventListener('click', () => {
+        alert('Opciones del juego');
+    });
 
-.menu button:hover {
-    background-color: #3e8e41;
-}
-
-#boton-jugar-img {
-    width: 200px;
-    height: auto;
-}
+    document.getElementById('salir').addEventListener('click', () => {
+        alert('Salir del juego');
+    });
+};
