@@ -33,13 +33,13 @@ body {
 }
 
 .menu-content {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el menú */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
 }
 
 .menu button {
-    background-color: transparent; /* Hace el fondo del botón transparente */
+    background-color: transparent;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -53,10 +53,10 @@ body {
 }
 
 .menu button:hover {
-    background-color: #3e8e41; /* Verde más oscuro */
+    background-color: #3e8e41;
 }
 
-#jugar img {
-    width: 200px; /* Ajusta el tamaño de la imagen */
+#boton-jugar-img {
+    width: 200px;
     height: auto;
 }
