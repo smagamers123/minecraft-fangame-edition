@@ -3,7 +3,7 @@ window.onload = function() {
     const menu = document.getElementById('menu');
     const botonJugarImg = document.getElementById('boton-jugar-img');
     let botonNormal = 'assets/menu/boton_play.png';
-    let botonPresionado = 'assets/menu/boton_play_presionado.png'; // Asegúrate de tener esta imagen
+    let botonPresionado = 'assets/menu/boton_play_presionado.png';
 
     setTimeout(() => {
         intro.style.opacity = 0;
