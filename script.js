@@ -1,27 +1,62 @@
-window.onload = function() {
-    const intro = document.getElementById('intro');
-    const menu = document.getElementById('menu');
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    setTimeout(() => {
-        intro.style.opacity = 0;
-        setTimeout(() => {
-            intro.style.display = 'none';
-            menu.style.display = 'block';
-        }, 2000); // Espera 2 segundos (la duración de la transición)
-    }, 3000); // Espera 3 segundos antes de iniciar la transición
+.intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
 
-    document.getElementById('jugar').addEventListener('click', () => {
-        // Lógica para iniciar el juego
-        alert('¡A jugar!');
-    });
+.intro img {
+    max-width: 80%;
+    max-height: 80%;
+}
 
-    document.getElementById('opciones').addEventListener('click', () => {
-        // Lógica para mostrar las opciones
-        alert('Opciones del juego');
-    });
+.menu {
+    text-align: center;
+    color: white;
+}
 
-    document.getElementById('salir').addEventListener('click', () => {
-        // Lógica para salir del juego
-        alert('Salir del juego');
-    });
-};
+.menu-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el menú */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.menu button {
+    background-color: transparent; /* Hace el fondo del botón transparente */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto;
+    cursor: pointer;
+    width: 200px;
+}
+
+.menu button:hover {
+    background-color: #3e8e41; /* Verde más oscuro */
+}
+
+#jugar img {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+}
