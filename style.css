@@ -1,51 +1,24 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+window.onload = function() {
+    const intro = document.getElementById('intro');
+    const menu = document.getElementById('menu');
 
-.intro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 2s ease-in-out;
-}
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+            intro.style.display = 'none';
+            menu.style.display = 'block';
+        }, 2000);
+    }, 3000);
 
-.intro img {
-    max-width: 80%;
-    max-height: 80%;
-}
+    document.getElementById('jugar').addEventListener('click', () => {
+        alert('¡A jugar!');
+    });
 
-.menu {
-    text-align: center;
-    color: white;
-}
+    document.getElementById('opciones').addEventListener('click', () => {
+        alert('Opciones del juego');
+    });
 
-.menu button {
-    background-color: #4CAF50; /* Verde */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-    margin: 20px auto;
-    cursor: pointer;
-    width: 200px;
-}
-
-.menu button:hover {
-    background-color: #3e8e41; /* Verde más oscuro */
-}
+    document.getElementById('salir').addEventListener('click', () => {
+        alert('Salir del juego');
+    });
+};
