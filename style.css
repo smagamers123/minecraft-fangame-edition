@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Asegura que el body ocupe al menos el alto de la pantalla */
+    min-height: 100vh;
 }
 
 .intro {
@@ -23,8 +23,8 @@ body {
 }
 
 .intro img {
-    max-width: 90%; /* Ajusta para pantallas más pequeñas */
-    max-height: 90%; /* Ajusta para pantallas más pequeñas */
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .menu {
@@ -45,10 +45,10 @@ body {
 
 .menu-content {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px; /* Aumenta el padding para mejor espaciado en móviles */
+    padding: 30px;
     border-radius: 10px;
-    max-width: 90%; /* Evita que el contenido sea demasiado ancho en móviles */
-    width: fit-content; /* Se ajusta al contenido */
+    max-width: 90%;
+    width: fit-content;
 }
 
 .menu button {
@@ -59,10 +59,21 @@ body {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 18px; /* Aumenta el tamaño de la fuente para mejor legibilidad en móviles */
+    font-size: 18px;
     margin: 20px auto;
     cursor: pointer;
-    width: auto; /* Permite que el botón se ajuste al tamaño de la imagen */
+    width: auto;
+    /* Elimina el resaltado al hacer clic */
+    outline: none;
+}
+
+.menu button:focus {
+    outline: none; /* También elimina el outline al enfocar con el teclado */
+}
+
+.menu button:active {
+    /* Opcional: Puedes agregar un pequeño cambio visual mientras se mantiene presionado, si lo deseas */
+    /* opacity: 0.8; */
 }
 
 .menu button:hover {
@@ -72,8 +83,14 @@ body {
 #boton-jugar-img {
     width: 200px;
     height: auto;
-    display: block; /* Evita espacios extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen dentro del botón */
+    display: block;
+    margin: 0 auto;
+    /* Evita el arrastre de la imagen */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 /* Media query para pantallas más pequeñas (ej. móviles) */
@@ -87,6 +104,6 @@ body {
         margin: 15px auto;
     }
     #boton-jugar-img {
-        width: 150px; /* Reduce el tamaño de la imagen en móviles */
+        width: 150px;
     }
 }
