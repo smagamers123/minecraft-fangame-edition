@@ -63,11 +63,11 @@ body {
     margin: 20px auto;
     cursor: pointer;
     width: auto;
-    outline: none;
+    outline: none; /* Elimina el outline */
 }
 
 .menu button:focus {
-    outline: none;
+    outline: none; /* Asegura que no haya outline al enfocar */
 }
 
 .menu button:active {
