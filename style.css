@@ -63,17 +63,21 @@ body {
     margin: 20px auto;
     cursor: pointer;
     width: auto;
-    /* Elimina el resaltado al hacer clic */
     outline: none;
 }
 
 .menu button:focus {
-    outline: none; /* También elimina el outline al enfocar con el teclado */
+    outline: none;
 }
 
 .menu button:active {
-    /* Opcional: Puedes agregar un pequeño cambio visual mientras se mantiene presionado, si lo deseas */
-    /* opacity: 0.8; */
+    background-color: transparent; /* Fondo transparente al presionar */
+    outline: none;
+}
+
+.menu button:focus-visible {
+    background-color: transparent; /* Fondo transparente al tener foco visible */
+    outline: none;
 }
 
 .menu button:hover {
@@ -85,7 +89,6 @@ body {
     height: auto;
     display: block;
     margin: 0 auto;
-    /* Evita el arrastre de la imagen */
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
