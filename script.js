@@ -22,6 +22,7 @@ window.onload = function() {
             setTimeout(() => {
                 botonJugarImg.src = botonNormal;
                 esperando = false;
+                botonJugar.blur(); // Intenta quitar el foco del botón
             }, 2000);
         }
     });
