@@ -5,27 +5,35 @@ window.onload = function() {
     const botonJugarImg = document.getElementById('boton-jugar-img');
     let botonNormal = 'assets/menu/boton_play.png';
     let botonPresionado = 'assets/menu/boton_play_presionado.png';
+    let esperando = false; // Bandera para evitar clics rápidos
 
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
             intro.style.display = 'none';
-            menu.style.display = 'flex'; // Usa flex para centrar el contenido del menú
+            menu.style.display = 'flex';
         }, 2000);
     }, 3000);
 
     botonJugar.addEventListener('mousedown', () => {
-        botonJugarImg.src = botonPresionado;
-    });
-
-    botonJugar.addEventListener('mouseup', () => {
-        // No volvemos a la imagen normal al soltar
+        if (!esperando) {
+            botonJugarImg.src = botonPresionado;
+            esperando = true;
+            setTimeout(() => {
+                botonJugarImg.src = botonNormal;
+                esperando = false;
+            }, 2000);
+        }
     });
 
     botonJugar.addEventListener('click', () => {
-        // La imagen ya se cambió en mousedown y se queda así
-        alert('¡A jugar!');
-        // Opcionalmente, podrías agregar aquí lógica para cargar el juego
+        if (!esperando) {
+            // La lógica principal del clic se ejecutará después del cambio de imagen
+            setTimeout(() => {
+                alert('¡A jugar!');
+                // Aquí iría la lógica para iniciar el juego
+            }, 2000);
+        }
     });
 
     document.getElementById('opciones').addEventListener('click', () => {
