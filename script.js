@@ -5,7 +5,7 @@ window.onload = function() {
     const botonJugarImg = document.getElementById('boton-jugar-img');
     let botonNormal = 'assets/menu/boton_play.png';
     let botonPresionado = 'assets/menu/boton_play_presionado.png';
-    let esperando = false; // Bandera para evitar clics rápidos
+    let esperando = false;
 
     setTimeout(() => {
         intro.style.opacity = 0;
@@ -28,7 +28,6 @@ window.onload = function() {
 
     botonJugar.addEventListener('click', () => {
         if (!esperando) {
-            // La lógica principal del clic se ejecutará después del cambio de imagen
             setTimeout(() => {
                 alert('¡A jugar!');
                 // Aquí iría la lógica para iniciar el juego
