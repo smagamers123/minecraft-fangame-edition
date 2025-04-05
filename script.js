@@ -36,13 +36,13 @@ window.onload = function() {
         }
     });
 
-    document.getElementById('opciones').addEventListener('click', () => {
+    document.getElementById('opciones').addEventListener('click', (event) => {
         alert('Opciones del juego');
-        document.getElementById('opciones').blur();
+        event.target.blur();
     });
 
-    document.getElementById('salir').addEventListener('click', () => {
+    document.getElementById('salir').addEventListener('click', (event) => {
         alert('Salir del juego');
-        document.getElementById('salir').blur();
+        event.target.blur();
     });
 };
