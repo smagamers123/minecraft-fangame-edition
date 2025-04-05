@@ -32,18 +32,17 @@ window.onload = function() {
                 alert('¡A jugar!');
                 // Aquí iría la lógica para iniciar el juego
             }, 2000);
-            // Evitar que el botón mantenga el foco visual después del clic
             event.target.blur();
         }
     });
 
     document.getElementById('opciones').addEventListener('click', () => {
         alert('Opciones del juego');
-        document.getElementById('opciones').blur(); // Opcional: Quitar foco de otros botones también
+        document.getElementById('opciones').blur();
     });
 
     document.getElementById('salir').addEventListener('click', () => {
         alert('Salir del juego');
-        document.getElementById('salir').blur(); // Opcional: Quitar foco de otros botones también
+        document.getElementById('salir').blur();
     });
 };
