@@ -63,11 +63,11 @@ body {
     margin: 20px auto;
     cursor: pointer;
     width: auto;
-    outline: none; /* Elimina el outline */
+    outline: none;
 }
 
 .menu button:focus {
-    outline: none; /* Asegura que no haya outline al enfocar */
+    outline: none;
 }
 
 .menu button:active {
@@ -76,7 +76,7 @@ body {
 }
 
 .menu button:focus-visible {
-    background-color: transparent; /* Fondo transparente al tener foco visible */
+    background-color: transparent;
     outline: none;
 }
 
