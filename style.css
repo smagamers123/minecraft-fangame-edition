@@ -1,112 +1,48 @@
-body {
-    margin: 0;
-    overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+window.onload = function() {
+    const intro = document.getElementById('intro');
+    const menu = document.getElementById('menu');
+    const botonJugar = document.getElementById('jugar');
+    const botonJugarImg = document.getElementById('boton-jugar-img');
+    let botonNormal = 'assets/menu/boton_play.png';
+    let botonPresionado = 'assets/menu/boton_play_presionado.png';
+    let esperando = false;
 
-.intro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 2s ease-in-out;
-}
+    setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+            intro.style.display = 'none';
+            menu.style.display = 'flex';
+        }, 2000);
+    }, 3000);
 
-.intro img {
-    max-width: 90%;
-    max-height: 90%;
-}
+    botonJugar.addEventListener('mousedown', () => {
+        if (!esperando) {
+            botonJugarImg.src = botonPresionado;
+            esperando = true;
+            setTimeout(() => {
+                botonJugarImg.src = botonNormal;
+                esperando = false;
+            }, 2000);
+        }
+    });
 
-.menu {
-    text-align: center;
-    color: white;
-    background-image: url('assets/menu/fondo_menu.png');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    botonJugar.addEventListener('click', (event) => {
+        if (!esperando) {
+            setTimeout(() => {
+                alert('¡A jugar!');
+                // Aquí iría la lógica para iniciar el juego
+            }, 2000);
+            event.target.blur();
+        }
+    });
 
-.menu-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 90%;
-    width: fit-content;
-}
+    document.getElementById('opciones').addEventListener('click', (event) => {
+        alert('Opciones del juego');
+        event.target.blur();
+    });
 
-.menu button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 18px;
-    margin: 20px auto;
-    cursor: pointer;
-    width: auto;
-    outline: none;
-}
-
-.menu button:focus {
-    outline: none;
-}
-
-.menu button:active {
-    background-color: transparent; /* Fondo transparente al presionar */
-    outline: none;
-}
-
-.menu button:focus-visible {
-    background-color: transparent;
-    outline: none;
-}
-
-.menu button:hover {
-    background-color: #3e8e41;
-}
-
-#boton-jugar-img {
-    width: 200px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-}
-
-/* Media query para pantallas más pequeñas (ej. móviles) */
-@media (max-width: 600px) {
-    .menu-content {
-        padding: 20px;
-    }
-    .menu button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 15px auto;
-    }
-    #boton-jugar-img {
-        width: 150px;
-    }
-}
+    document.getElementById('salir').addEventListener('click', (event) => {
+        alert('Salir del juego');
+        event.target.blur();
+    });
+};
