@@ -41,28 +41,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px; /* Añadimos un poco de padding general al menú */
-    box-sizing: border-box; /* Incluimos el padding en el ancho y alto */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .menu-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px; /* Reducimos el padding del contenido en general */
+    /* background-color: rgba(0, 0, 0, 0.7); */ /* Eliminamos o comentamos el fondo semi-transparente */
+    padding: 20px;
     border-radius: 10px;
-    max-width: 95%; /* Permitimos que el contenido ocupe más ancho en móviles */
+    max-width: 95%;
     width: fit-content;
+    display: flex; /* Para alinear los botones verticalmente */
+    flex-direction: column; /* Apila los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
 .menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 12px 24px; /* Reducimos un poco el padding de los botones */
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
-    display: block;
-    font-size: 16px; /* Reducimos el tamaño de la fuente por defecto */
-    margin: 15px auto; /* Reducimos los márgenes de los botones */
+    display: block; /* Ya no es necesario con flex-direction: column en el padre */
+    font-size: 16px;
+    margin: 10px auto; /* Ajustamos el margen */
     cursor: pointer;
     width: auto;
     outline: none;
@@ -87,10 +90,10 @@ body {
 }
 
 #boton-jugar-img {
-    max-width: 100%; /* Aseguramos que la imagen no se desborde del botón */
+    max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 10px; /* Añadimos un margen inferior para separar del siguiente botón */
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
@@ -98,7 +101,7 @@ body {
     user-drag: none;
 }
 
-/* Media query para pantallas más pequeñas (ancho máximo de 768px - tabletas y móviles) */
+/* Media query para pantallas más pequeñas (ancho máximo de 768px) */
 @media (max-width: 768px) {
     .menu-content {
         padding: 15px;
@@ -106,21 +109,23 @@ body {
     .menu button {
         padding: 10px 20px;
         font-size: 14px;
-        margin: 10px auto;
+        margin: 8px auto;
     }
     #boton-jugar-img {
-        width: 120px; /* Reducimos aún más el tamaño de la imagen en móviles */
+        width: 120px;
+        margin-bottom: 8px;
     }
 }
 
-/* Media query para pantallas aún más pequeñas (ancho máximo de 480px - móviles pequeños) */
+/* Media query para pantallas aún más pequeñas (ancho máximo de 480px) */
 @media (max-width: 480px) {
     .menu button {
         padding: 8px 16px;
         font-size: 12px;
-        margin: 8px auto;
+        margin: 6px auto;
     }
     #boton-jugar-img {
         width: 100px;
+        margin-bottom: 6px;
     }
 }
