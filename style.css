@@ -30,7 +30,7 @@ body {
 .menu {
     text-align: center;
     color: white;
-    background-image: url('assets/menu/minecraft_fondo.gif'); /* Usando la imagen GIF */
+    background-image: url('assets/menu/minecraft_fondo.gif');
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -41,13 +41,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px; /* Añadimos un poco de padding general al menú */
+    box-sizing: border-box; /* Incluimos el padding en el ancho y alto */
 }
 
 .menu-content {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
+    padding: 20px; /* Reducimos el padding del contenido en general */
     border-radius: 10px;
-    max-width: 90%;
+    max-width: 95%; /* Permitimos que el contenido ocupe más ancho en móviles */
     width: fit-content;
 }
 
@@ -55,12 +57,12 @@ body {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 12px 24px; /* Reducimos un poco el padding de los botones */
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 18px;
-    margin: 20px auto;
+    font-size: 16px; /* Reducimos el tamaño de la fuente por defecto */
+    margin: 15px auto; /* Reducimos los márgenes de los botones */
     cursor: pointer;
     width: auto;
     outline: none;
@@ -85,7 +87,7 @@ body {
 }
 
 #boton-jugar-img {
-    width: 200px;
+    max-width: 100%; /* Aseguramos que la imagen no se desborde del botón */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -96,17 +98,29 @@ body {
     user-drag: none;
 }
 
-/* Media query para pantallas más pequeñas (ej. móviles) */
-@media (max-width: 600px) {
+/* Media query para pantallas más pequeñas (ancho máximo de 768px - tabletas y móviles) */
+@media (max-width: 768px) {
     .menu-content {
-        padding: 20px;
+        padding: 15px;
     }
     .menu button {
         padding: 10px 20px;
-        font-size: 16px;
-        margin: 15px auto;
+        font-size: 14px;
+        margin: 10px auto;
     }
     #boton-jugar-img {
-        width: 150px;
+        width: 120px; /* Reducimos aún más el tamaño de la imagen en móviles */
+    }
+}
+
+/* Media query para pantallas aún más pequeñas (ancho máximo de 480px - móviles pequeños) */
+@media (max-width: 480px) {
+    .menu button {
+        padding: 8px 16px;
+        font-size: 12px;
+        margin: 8px auto;
+    }
+    #boton-jugar-img {
+        width: 100px;
     }
 }
