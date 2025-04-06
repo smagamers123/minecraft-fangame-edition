@@ -10,8 +10,7 @@ window.onload = function() {
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
-            intro.style.display = 'none';
-            menu.style.display = 'flex';
+            intro.style.display = 'flex'; // El menú ahora es flex para centrar su contenido
         }, 2000);
     }, 3000);
 
@@ -34,15 +33,5 @@ window.onload = function() {
             }, 2000);
             event.target.blur();
         }
-    });
-
-    document.getElementById('opciones').addEventListener('click', (event) => {
-        alert('Opciones del juego');
-        event.target.blur();
-    });
-
-    document.getElementById('salir').addEventListener('click', (event) => {
-        alert('Salir del juego');
-        event.target.blur();
     });
 };
