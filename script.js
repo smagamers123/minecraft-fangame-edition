@@ -10,7 +10,8 @@ window.onload = function() {
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
-            intro.style.display = 'flex'; // El menú ahora es flex para centrar su contenido
+            intro.style.display = 'none';
+            menu.style.display = 'flex'; // Mostramos el menú usando flex
         }, 2000);
     }, 3000);
 
