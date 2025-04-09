@@ -38,7 +38,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none; /* Inicialmente oculto */
     justify-content: center;
     align-items: center;
 }
@@ -58,7 +58,7 @@ body {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 0; /* Eliminamos el padding del botón */
+    padding: 0;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -85,10 +85,10 @@ body {
 }
 
 #boton-jugar-img {
-    width: 250px; /* Aumentamos el ancho de la imagen */
+    width: 250px;
     height: auto;
     display: block;
-    margin: 0 auto; /* Centramos la imagen dentro del botón y del contenedor */
+    margin: 0 auto;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
@@ -96,7 +96,7 @@ body {
     user-drag: none;
 }
 
-/* Media queries - podemos simplificarlas ya que solo hay un botón */
+/* Media queries */
 @media (max-width: 768px) {
     #boton-jugar-img {
         width: 200px;
