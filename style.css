@@ -45,7 +45,7 @@ body {
 }
 
 .menu-content {
-    background-color: transparent;
+    background-color: transparent; /* Fondo transparente */
     padding: 20px;
     border-radius: 10px;
     max-width: 95%;
@@ -56,9 +56,9 @@ body {
 }
 
 #logo-minicraft {
-    max-width: 80%; /* Ajusta el tamaño del logo */
+    max-width: 80%;
     height: auto;
-    margin-bottom: 20px; /* Espacio entre el logo y el botón */
+    margin-bottom: 20px;
 }
 
 .menu button {
