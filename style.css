@@ -46,7 +46,7 @@ body {
 
 .menu-content {
     background-color: transparent; /* Fondo transparente */
-    padding: 30px; /* Aumentamos el padding del contenedor */
+    padding: 40px; /* Aumentamos aún más el padding del contenedor */
     border-radius: 10px;
     max-width: 95%;
     width: fit-content;
@@ -56,22 +56,22 @@ body {
 }
 
 #logo-minicraft {
-    max-width: 90%; /* Hacemos el logo más grande */
+    max-width: 95%; /* Hacemos el logo aún más grande */
     height: auto;
-    margin-bottom: 40px; /* Aumentamos el espacio entre el logo y el botón */
+    margin-bottom: 50px; /* Aumentamos aún más el espacio */
 }
 
 .menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 15px 30px; /* Aumentamos el padding de los botones */
+    padding: 20px 40px; /* Aumentamos aún más el padding de los botones */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     width: auto;
     outline: none;
-    font-size: 20px; /* Aumentamos el tamaño de la fuente de los botones (si tuvieras texto) */
+    font-size: 24px; /* Aumentamos aún más el tamaño de la fuente */
 }
 
 .menu button:focus {
@@ -93,7 +93,7 @@ body {
 }
 
 #boton-jugar-img {
-    max-width: 90%; /* Hacemos la imagen del botón más grande */
+    max-width: 95%; /* Hacemos la imagen del botón aún más grande */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -107,42 +107,42 @@ body {
 /* Media queries */
 @media (orientation: landscape) and (max-height: 768px) {
     #boton-jugar-img {
-        max-width: 70%;
+        max-width: 80%;
     }
     #logo-minicraft {
-        max-width: 70%;
-        margin-bottom: 30px;
+        max-width: 80%;
+        margin-bottom: 40px;
     }
     .menu button {
-        padding: 12px 25px;
-        font-size: 18px;
+        padding: 15px 30px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 768px) {
     #boton-jugar-img {
-        max-width: 90%;
+        max-width: 95%;
     }
     #logo-minicraft {
-        max-width: 80%;
-        margin-bottom: 30px;
+        max-width: 90%;
+        margin-bottom: 40px;
     }
     .menu button {
-        padding: 12px 25px;
-        font-size: 18px;
+        padding: 15px 30px;
+        font-size: 20px;
     }
 }
 
 @media (max-width: 480px) {
     #boton-jugar-img {
-        max-width: 100%; /* La imagen ocupa casi todo el ancho en móviles pequeños */
+        max-width: 100%;
     }
     #logo-minicraft {
         max-width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .menu button {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 12px 25px;
+        font-size: 18px;
     }
 }
