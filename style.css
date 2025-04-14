@@ -42,14 +42,14 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Alinea los elementos del menú en columna */
+    flex-direction: column;
 }
 
 .menu-content {
     background-color: transparent;
     padding: 20px;
     border-radius: 10px;
-    max-width: 300px; /* Ancho máximo para el contenido del menú */
+    max-width: 300px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -59,18 +59,18 @@ body {
 #logo-minicraft {
     max-width: 80%;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 0; /* Eliminamos el padding del botón para controlar el tamaño con la imagen */
+    padding: 0; /* Sin padding */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    width: 101px; /* Establecemos el ancho fijo del botón */
+    width: auto; /* El ancho se ajustará al contenido (la imagen) */
     height: auto; /* La altura se ajustará proporcionalmente */
     outline: none;
     margin-top: 10px;
@@ -105,7 +105,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 100%; /* La imagen ocupa todo el ancho del botón */
+    max-width: 100%; /* La imagen ocupa todo el ancho disponible dentro del botón */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -116,13 +116,17 @@ body {
     user-drag: none;
 }
 
-/* Media queries - ajustamos para centrar en pantallas más pequeñas también */
+/* Media queries */
 @media (max-width: 600px) {
     .menu-content {
         max-width: 80%;
     }
     #logo-minicraft {
         max-width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+    }
+    .menu button {
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 }
