@@ -10,10 +10,10 @@ window.onload = function() {
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
-            intro.style.display = 'none';
-            menu.style.display = 'flex'; // Mostramos el menú usando flex
-        }, 2000);
-    }, 3000);
+            intro.style.display = 'none'; // <-- ¡Este es el cambio importante!
+            menu.style.display = 'flex';
+        }, 2000); // Este tiempo debe coincidir con la duración de la transición de opacidad en el CSS
+    }, 3000); // Tiempo total antes de que la intro comience a desaparecer (3 segundos) + duración del desvanecimiento (2 segundos) = 5 segundos totales
 
     botonJugar.addEventListener('mousedown', () => {
         if (!esperando) {
