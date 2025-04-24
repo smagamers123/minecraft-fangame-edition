@@ -2,7 +2,7 @@ window.onload = function() {
     const intro = document.getElementById('intro');
     const menu = document.getElementById('menu');
     const botonJugar = document.getElementById('jugar');
-    const botonJugarImg = document.getElementById('boton-jugar-img');
+    const botonJugarImg = botonJugar.querySelector('.menu-button-img') || document.getElementById('boton-jugar-img');
     const botonOpciones = document.getElementById('opciones');
     const botonOpcionesImg = botonOpciones.querySelector('.menu-button-img');
     const botonSalir = document.getElementById('salir');
@@ -10,8 +10,6 @@ window.onload = function() {
 
     let botonPlayNormal = 'assets/menu/boton_play.png';
     let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
-    let botonGrisNormal = 'assets/menu/boton_gris.png';
-    let botonGrisPresionado = 'assets/menu/boton_gris_presionado.png';
     let esperando = false;
 
     setTimeout(() => {
@@ -31,7 +29,7 @@ window.onload = function() {
                 setTimeout(() => {
                     imgElement.src = imagenNormal;
                     esperandoLocal = false;
-                }, 200); // Un tiempo más corto para el efecto de presión
+                }, 200); // Tiempo corto para el efecto de presión
             }
         });
 
@@ -45,8 +43,9 @@ window.onload = function() {
         });
 
         boton.addEventListener('click', () => {
-            // Aquí puedes añadir la lógica específica para cada botón
-            if (boton.id === 'opciones') {
+            if (boton.id === 'jugar') {
+                alert('¡A jugar!');
+            } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
             } else if (boton.id === 'salir') {
                 alert('Salir del juego');
@@ -58,7 +57,7 @@ window.onload = function() {
     // Aplicar el efecto al botón Jugar
     cambiarEstadoBoton(botonJugar, botonPlayNormal, botonPlayPresionado, botonJugarImg);
 
-    // Aplicar el efecto a los botones Opciones y Salir
-    cambiarEstadoBoton(botonOpciones, botonGrisNormal, botonGrisPresionado, botonOpcionesImg);
-    cambiarEstadoBoton(botonSalir, botonGrisNormal, botonGrisPresionado, botonSalirImg);
+    // Aplicar el mismo efecto a los botones Opciones y Salir
+    cambiarEstadoBoton(botonOpciones, botonPlayNormal, botonPlayPresionado, botonOpcionesImg);
+    cambiarEstadoBoton(botonSalir, botonPlayNormal, botonPlayPresionado, botonSalirImg);
 };
