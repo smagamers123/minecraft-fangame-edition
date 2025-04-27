@@ -43,6 +43,7 @@ body {
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
+    width: auto; /* Ancho automático para ajustarse al contenido */
 }
 
 .menu.slide-out {
@@ -55,12 +56,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px; /* Más espacio alrededor del contenido del menú */
 }
 
 #logo-minicraft {
-    max-width: 90%; /* Logo un poco más grande */
+    max-width: 600px; /* Logo mucho más ancho */
     height: auto;
-    margin-bottom: 10px; /* Menos espacio entre el logo y los botones */
+    margin-bottom: 30px;
 }
 
 .menu button {
@@ -74,8 +76,8 @@ body {
     width: auto;
     height: auto;
     outline: none;
-    margin-top: 5px; /* Menos espacio entre botones */
-    margin-bottom: 5px; /* Menos espacio entre botones */
+    margin-top: 15px; /* Más espacio entre botones */
+    margin-bottom: 15px; /* Más espacio entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -111,7 +113,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 150%; /* Botones más anchos */
+    max-width: 600px; /* Botones mucho más anchos */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -160,7 +162,7 @@ body {
 }
 
 #back-button img {
-    max-width: 100px;
+    max-width: 150px; /* Botón de retroceso un poco más grande */
     height: auto;
     display: block;
 }
