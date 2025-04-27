@@ -60,7 +60,7 @@ window.onload = function() {
     }
 
     botonesMenu.forEach(boton => {
-        const imgElement = boton.querySelector('.menu-button-img') || document.getElementById('boton-jugar-img');
+        const imgElement = boton.querySelector('.menu-button-img');
         cambiarEstadoBoton(boton, botonPlayNormal, botonPlayPresionado, imgElement);
     });
 
@@ -69,7 +69,7 @@ window.onload = function() {
         botonesMenu.forEach(boton => {
             boton.classList.remove('slide-out');
         });
-        menu.classList.remove('slide-out'); // Remueve la clase para que vuelva
+        menu.classList.remove('slide-out');
         menu.style.display = 'flex';
     });
 };
