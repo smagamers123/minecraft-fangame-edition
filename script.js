@@ -45,10 +45,11 @@ window.onload = function() {
                 botonesMenu.forEach(boton => {
                     boton.classList.add('slide-out');
                 });
+                menu.classList.add('slide-out'); // Anima también el menú
                 setTimeout(() => {
                     menu.style.display = 'none';
                     gameContainer.style.display = 'flex';
-                }, 300);
+                }, 500); // Ajusta el tiempo para que coincida con la animación
             } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
             } else if (boton.id === 'salir') {
@@ -63,12 +64,12 @@ window.onload = function() {
         cambiarEstadoBoton(boton, botonPlayNormal, botonPlayPresionado, imgElement);
     });
 
-    // Funcionalidad del botón de retroceso
     backButton.addEventListener('click', () => {
         gameContainer.style.display = 'none';
         botonesMenu.forEach(boton => {
             boton.classList.remove('slide-out');
         });
+        menu.classList.remove('slide-out'); // Remueve la clase para que vuelva
         menu.style.display = 'flex';
     });
 };
