@@ -1,7 +1,9 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-color: black;
+    background-image: url('assets/menu/minecraft_fondo.gif'); /* Fondo GIF en el body */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,31 +33,27 @@ body {
 .menu {
     text-align: center;
     color: white;
-    background-image: url('assets/menu/minecraft_fondo.gif');
-    background-size: cover;
-    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente para el menú */
+    border-radius: 10px;
+    padding: 20px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     transition: transform 0.5s ease-in-out;
+    z-index: 2; /* Asegura que esté por encima del fondo */
 }
 
 .menu.slide-out {
-    transform: translateX(100%);
+    transform: translate(50%, -50%) translateX(200%); /* Desplaza el menú */
+    opacity: 0;
 }
 
 .menu-content {
     background-color: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 300px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,10 +66,10 @@ body {
 }
 
 .menu button {
-    background-color: transparent;
+    background-color: rgba(50, 50, 50, 0.7); /* Fondo oscuro semi-transparente para los botones */
     border: none;
     color: white;
-    padding: 0;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -80,7 +78,8 @@ body {
     outline: none;
     margin-top: 5px;
     margin-bottom: 5px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 .menu button.slide-out {
@@ -101,17 +100,16 @@ body {
 }
 
 .menu button:active {
-    background-color: transparent;
-    outline: none;
+    background-color: rgba(80, 80, 80, 0.9);
 }
 
 .menu button:focus-visible {
-    background-color: transparent;
-    outline: none;
+    outline: 2px solid white;
+    outline-offset: 2px;
 }
 
 .menu button:hover {
-    /* Estilos al pasar el ratón si deseas */
+    background-color: rgba(80, 80, 80, 0.9);
 }
 
 #boton-jugar-img,
@@ -129,11 +127,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('assets/menu/minecraft_fondo.gif'); /* Fondo del menú */
-    background-size: cover;
-    background-position: center;
-    width: 60%; /* Más cuadrado */
-    height: 60%; /* Más cuadrado */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro para el cuadrado */
+    width: 40vh; /* 100% cuadrado basado en la altura de la ventana */
+    height: 40vh; /* 100% cuadrado basado en la altura de la ventana */
     border-radius: 10px;
     z-index: 10;
     justify-content: center;
@@ -141,14 +137,11 @@ body {
     color: white;
     font-size: 2em;
     text-align: center;
-    flex-direction: column; /* Para alinear el texto y el botón */
+    flex-direction: column; /* Para centrar el botón */
 }
 
 #back-button {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    background-color: rgba(50, 50, 50, 0.7);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -157,8 +150,27 @@ body {
     font-size: 1em;
     outline: none;
     transition: background-color 0.3s ease;
+    position: absolute; /* Lo posicionamos dentro del contenedor */
+    bottom: 20px;
+    left: 20px;
 }
 
 #back-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(80, 80, 80, 0.9);
+}
+
+#start-game-button {
+    background-color: rgba(50, 50, 50, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#start-game-button:hover {
+    background-color: rgba(80, 80, 80, 0.9);
 }
