@@ -5,6 +5,7 @@ window.onload = function() {
     const botonesMenu = document.querySelectorAll('.menu button');
     const gameContainer = document.getElementById('game-container');
     const backButton = document.getElementById('back-button');
+    const fullscreenButton = document.getElementById('fullscreen-button');
 
     let botonPlayNormal = 'assets/menu/boton_play.png';
     let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
@@ -45,11 +46,11 @@ window.onload = function() {
                 botonesMenu.forEach(boton => {
                     boton.classList.add('slide-out');
                 });
-                menu.classList.add('slide-out'); // Anima también el menú
+                menu.classList.add('slide-out');
                 setTimeout(() => {
                     menu.style.display = 'none';
                     gameContainer.style.display = 'flex';
-                }, 500); // Ajusta el tiempo para que coincida con la animación
+                }, 500);
             } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
             } else if (boton.id === 'salir') {
@@ -71,5 +72,14 @@ window.onload = function() {
         });
         menu.classList.remove('slide-out');
         menu.style.display = 'flex';
+    });
+
+    // Funcionalidad de pantalla completa
+    fullscreenButton.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
     });
 };
