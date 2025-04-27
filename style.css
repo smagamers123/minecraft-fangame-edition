@@ -129,9 +129,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(50, 50, 50, 0.8);
-    width: 80%;
-    height: 60%;
+    background-image: url('assets/menu/minecraft_fondo.gif'); /* Fondo del menú */
+    background-size: cover;
+    background-position: center;
+    width: 60%; /* Más cuadrado */
+    height: 60%; /* Más cuadrado */
     border-radius: 10px;
     z-index: 10;
     justify-content: center;
@@ -139,4 +141,24 @@ body {
     color: white;
     font-size: 2em;
     text-align: center;
-} 
+    flex-direction: column; /* Para alinear el texto y el botón */
+}
+
+#back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
