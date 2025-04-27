@@ -59,9 +59,9 @@ body {
 }
 
 #logo-minicraft {
-    max-width: 90vw; /* Logo extremadamente ancho */
+    max-width: 90vw; /* Ajuste para pantallas pequeñas */
     height: auto;
-    margin-bottom: 0; /* Sin espacio debajo del logo */
+    margin-bottom: 0;
 }
 
 .menu button {
@@ -75,8 +75,8 @@ body {
     width: auto;
     height: auto;
     outline: none;
-    margin-top: 0; /* Sin espacio entre botones */
-    margin-bottom: 0; /* Sin espacio entre botones */
+    margin-top: 0;
+    margin-bottom: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -112,7 +112,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 90vw; /* Botones extremadamente anchos */
+    max-width: 90vw; /* Ajuste para pantallas pequeñas */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -175,11 +175,27 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    z-index: 3; /* Asegurarse de que esté por encima del menú */
+    z-index: 3;
 }
 
 #fullscreen-button img {
-    max-width: 80px; /* Tamaño del botón de pantalla completa */
+    max-width: 80px;
     height: auto;
     display: block;
+}
+
+/* Media query para pantallas más grandes (ordenador) */
+@media (min-width: 768px) {
+    #logo-minicraft {
+        max-width: 900px; /* Logo más grande en pantallas de ordenador */
+    }
+
+    #boton-jugar-img,
+    .menu-button-img {
+        max-width: 900px; /* Botones más grandes en pantallas de ordenador */
+    }
+
+    .menu {
+        width: auto; /* Ajustar ancho en pantallas de ordenador */
+    }
 }
