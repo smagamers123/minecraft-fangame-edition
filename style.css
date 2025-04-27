@@ -43,6 +43,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu.slide-out {
+    transform: translateX(100%);
 }
 
 .menu-content {
@@ -66,15 +71,21 @@ body {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 0; /* Sin padding */
+    padding: 0;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    width: auto; /* El ancho se ajustará al contenido (la imagen) */
-    height: auto; /* La altura se ajustará proporcionalmente */
+    width: auto;
+    height: auto;
     outline: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu button.slide-out {
+    transform: translateX(200%);
+    opacity: 0;
 }
 
 .menu button:first-of-type {
@@ -100,33 +111,32 @@ body {
 }
 
 .menu button:hover {
-    /* background-color: #3e8e41; */
+    /* Estilos al pasar el ratón si deseas */
 }
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 100%; /* La imagen ocupa todo el ancho disponible dentro del botón */
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
+    user-select: none;
 }
 
-/* Media queries */
-@media (max-width: 600px) {
-    .menu-content {
-        max-width: 80%;
-    }
-    #logo-minicraft {
-        max-width: 90%;
-        margin-bottom: 15px;
-    }
-    .menu button {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-}
+#game-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(50, 50, 50, 0.8);
+    width: 80%;
+    height: 60%;
+    border-radius: 10px;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+} 
