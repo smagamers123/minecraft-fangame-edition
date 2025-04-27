@@ -41,6 +41,8 @@ body {
     flex-direction: column;
     align-items: center;
     z-index: 2;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Añadimos opacidad a la transición del menú */
+    background-color: transparent; /* Fondo transparente para el menú */
 }
 
 .menu.slide-out {
@@ -118,14 +120,12 @@ body {
 
 #game-container {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro más opaco (0.7) */
-    width: 80vw; /* Ancho grande */
-    height: 80vw; /* Alto grande (100% cuadrado) */
-    border-radius: 10px;
+    position: fixed; /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
     z-index: 10;
     justify-content: center;
     align-items: center;
@@ -138,10 +138,12 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
+    max-width: 80%; /* Botón más grande */
+    height: auto;
 }
 
 #start-game-button img {
-    max-width: 50%; /* Tamaño del botón "Crear Mundo" */
+    max-width: 100%;
     height: auto;
     display: block;
 }
@@ -158,7 +160,7 @@ body {
 }
 
 #back-button img {
-    max-width: 100px; /* Tamaño del botón de retroceso */
+    max-width: 100px;
     height: auto;
     display: block;
 }
