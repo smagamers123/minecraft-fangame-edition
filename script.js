@@ -2,11 +2,8 @@ window.onload = function() {
     const intro = document.getElementById('intro');
     const menu = document.getElementById('menu');
     const botonJugar = document.getElementById('jugar');
-    const botonJugarImg = botonJugar.querySelector('.menu-button-img') || document.getElementById('boton-jugar-img');
-    const botonOpciones = document.getElementById('opciones');
-    const botonOpcionesImg = botonOpciones.querySelector('.menu-button-img');
-    const botonSalir = document.getElementById('salir');
-    const botonSalirImg = botonSalir.querySelector('.menu-button-img');
+    const botonesMenu = document.querySelectorAll('.menu button');
+    const gameContainer = document.getElementById('game-container');
 
     let botonPlayNormal = 'assets/menu/boton_play.png';
     let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
@@ -29,7 +26,7 @@ window.onload = function() {
                 setTimeout(() => {
                     imgElement.src = imagenNormal;
                     esperandoLocal = false;
-                }, 200); // Tiempo corto para el efecto de presión
+                }, 200);
             }
         });
 
@@ -44,7 +41,13 @@ window.onload = function() {
 
         boton.addEventListener('click', () => {
             if (boton.id === 'jugar') {
-                alert('¡A jugar!');
+                botonesMenu.forEach(boton => {
+                    boton.classList.add('slide-out');
+                });
+                setTimeout(() => {
+                    menu.style.display = 'none';
+                    gameContainer.style.display = 'flex';
+                }, 300);
             } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
             } else if (boton.id === 'salir') {
@@ -54,10 +57,8 @@ window.onload = function() {
         });
     }
 
-    // Aplicar el efecto al botón Jugar
-    cambiarEstadoBoton(botonJugar, botonPlayNormal, botonPlayPresionado, botonJugarImg);
-
-    // Aplicar el mismo efecto a los botones Opciones y Salir
-    cambiarEstadoBoton(botonOpciones, botonPlayNormal, botonPlayPresionado, botonOpcionesImg);
-    cambiarEstadoBoton(botonSalir, botonPlayNormal, botonPlayPresionado, botonSalirImg);
+    botonesMenu.forEach(boton => {
+        const imgElement = boton.querySelector('.menu-button-img') || document.getElementById('boton-jugar-img');
+        cambiarEstadoBoton(boton, botonPlayNormal, botonPlayPresionado, imgElement);
+    });
 };
