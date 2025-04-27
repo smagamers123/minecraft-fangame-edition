@@ -4,6 +4,7 @@ window.onload = function() {
     const botonJugar = document.getElementById('jugar');
     const botonesMenu = document.querySelectorAll('.menu button');
     const gameContainer = document.getElementById('game-container');
+    const backButton = document.getElementById('back-button');
 
     let botonPlayNormal = 'assets/menu/boton_play.png';
     let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
@@ -60,5 +61,14 @@ window.onload = function() {
     botonesMenu.forEach(boton => {
         const imgElement = boton.querySelector('.menu-button-img') || document.getElementById('boton-jugar-img');
         cambiarEstadoBoton(boton, botonPlayNormal, botonPlayPresionado, imgElement);
+    });
+
+    // Funcionalidad del botón de retroceso
+    backButton.addEventListener('click', () => {
+        gameContainer.style.display = 'none';
+        botonesMenu.forEach(boton => {
+            boton.classList.remove('slide-out');
+        });
+        menu.style.display = 'flex';
     });
 };
