@@ -2,10 +2,10 @@ window.onload = function() {
     const intro = document.getElementById('intro');
     const menu = document.getElementById('menu');
     const botonJugar = document.getElementById('jugar');
-    const botonesMenu = document.querySelectorAll('.menu button');
+    const botonesMenu = document.querySelectorAll('.botones-menu button:not(#fullscreen-button-menu)');
     const gameContainer = document.getElementById('game-container');
     const backButton = document.getElementById('back-button');
-    const fullscreenButton = document.getElementById('fullscreen-button');
+    const fullscreenButtonMenu = document.getElementById('fullscreen-button-menu');
     const audioElement = new Audio('assets/menu/minecraft_song.mp3');
     audioElement.loop = true;
 
@@ -61,7 +61,7 @@ window.onload = function() {
 
     botonesMenu.forEach(boton => {
         const imgElement = boton.querySelector('.menu-button-img');
-        cambiarEstadoBoton(boton, botonPlayNormal, botonPlayPresionado, imgElement);
+        cambiarEstadoBoton(boton, 'assets/menu/boton_play.png', 'assets/menu/boton_play_presionado.png', imgElement);
     });
 
     backButton.addEventListener('click', () => {
@@ -74,7 +74,8 @@ window.onload = function() {
         audioElement.play().catch(error => console.error("Error al reproducir la música:", error));
     });
 
-    fullscreenButton.addEventListener('click', () => {
+    // Funcionalidad de pantalla completa para el botón del menú
+    fullscreenButtonMenu.addEventListener('click', () => {
         if (document.fullscreenElement) {
             document.exitFullscreen();
         } else {
