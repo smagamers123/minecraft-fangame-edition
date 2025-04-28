@@ -7,14 +7,18 @@ window.onload = function() {
     const backButton = document.getElementById('back-button');
     const fullscreenButton = document.getElementById('fullscreen-button');
     const audioElement = new Audio('assets/menu/minecraft_song.mp3');
-    audioElement.loop = true; // Para que la música se repita
+    audioElement.loop = true;
+
+    let botonPlayNormal = 'assets/menu/boton_play.png';
+    let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
+    let esperando = false;
 
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
             intro.style.display = 'none';
             menu.style.display = 'flex';
-            audioElement.play(); // Iniciar la reproducción de la música al mostrar el menú
+            audioElement.play().catch(error => console.error("Error al reproducir la música:", error)); // Iniciar la música y manejar posibles errores
         }, 2000);
     }, 3000);
 
@@ -49,6 +53,7 @@ window.onload = function() {
                 setTimeout(() => {
                     menu.style.display = 'none';
                     gameContainer.style.display = 'flex';
+                    audioElement.pause(); // Pausar la música al ir a la pantalla de crear mundo (opcional)
                 }, 500);
             } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
@@ -71,7 +76,7 @@ window.onload = function() {
         });
         menu.classList.remove('slide-out');
         menu.style.display = 'flex';
-        audioElement.play(); // Asegurar que la música siga reproduciéndose al volver al menú
+        audioElement.play().catch(error => console.error("Error al reproducir la música:", error)); // Reanudar la música al volver al menú
     });
 
     fullscreenButton.addEventListener('click', () => {
