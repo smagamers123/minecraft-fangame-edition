@@ -57,13 +57,29 @@ body {
 #logo-minicraft {
     max-width: 80vw;
     height: auto;
-    margin-bottom: 20px; /* Espacio entre el logo y los botones */
+    margin-bottom: 30px;
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.boton-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre los grupos de botón y texto */
+}
+
+.boton-container:last-child {
+    margin-bottom: 0;
+}
+
+.boton-texto {
+    font-size: 1.2em;
+    margin-bottom: 5px;
 }
 
 .botones-menu button {
@@ -77,22 +93,12 @@ body {
     width: auto;
     height: auto;
     outline: none;
-    margin-top: 5px; /* Poco espacio entre botones */
-    margin-bottom: 5px; /* Poco espacio entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .botones-menu button.slide-out {
     transform: translateX(200%);
     opacity: 0;
-}
-
-.botones-menu button:first-of-type {
-    margin-top: 0;
-}
-
-.botones-menu button:last-of-type {
-    margin-bottom: 0;
 }
 
 .botones-menu button:focus {
@@ -114,11 +120,18 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 80vw;
+    max-width: 150px; /* Tamaño de los botones */
     height: auto;
     display: block;
-    margin: 0 auto;
     user-select: none;
+}
+
+.fullscreen-button-img {
+    max-width: 60px; /* Tamaño del botón de pantalla completa */
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 #game-container {
@@ -128,11 +141,28 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
     z-index: 10;
     justify-content: center;
     align-items: center;
+}
+
+#crear-mundo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Negro con 80% de opacidad */
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#crear-mundo-texto {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
 }
 
 #start-game-button {
@@ -141,7 +171,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 80%;
+    max-width: 200px;
     height: auto;
 }
 
@@ -149,22 +179,22 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px auto;
 }
 
 #back-button {
     position: absolute;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
     outline: none;
+    max-width: 100px;
 }
 
 #back-button img {
-    max-width: 150px;
+    max-width: 100%;
     height: auto;
     display: block;
 }
