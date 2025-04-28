@@ -6,10 +6,9 @@ body {
     background-position: center;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center; /* Centrar verticalmente */
     min-height: 100vh;
     min-width: 100vw;
-    padding-bottom: 20px;
 }
 
 .intro {
@@ -40,8 +39,7 @@ body {
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
-    width: 95vw;
-    max-width: 1200px; /* Aún más ancho máximo */
+    width: auto;
 }
 
 .menu.slide-out {
@@ -57,9 +55,9 @@ body {
 }
 
 #logo-minicraft {
-    max-width: 95vw; /* Logo inmensamente ancho */
+    max-width: 600px; /* Logo grande */
     height: auto;
-    margin-bottom: 0;
+    margin-bottom: 30px; /* Espacio debajo del logo */
 }
 
 .menu button {
@@ -70,11 +68,11 @@ body {
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    width: 95vw; /* Botones inmensamente anchos */
+    width: auto;
     height: auto;
     outline: none;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 15px; /* Espacio entre botones */
+    margin-bottom: 15px; /* Espacio entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -110,21 +108,11 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 100%;
+    max-width: 600px; /* Botones grandes */
     height: auto;
     display: block;
-    margin: 20px auto; /* Aún más espacio vertical */
+    margin: 0 auto;
     user-select: none;
-}
-
-#boton-jugar-img:first-child,
-.menu-button-img:first-child {
-    margin-top: 0;
-}
-
-#boton-jugar-img:last-child,
-.menu-button-img:last-child {
-    margin-bottom: 0;
 }
 
 #game-container {
@@ -147,7 +135,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 95%; /* Botón de crear mundo también muy grande */
+    max-width: 80%;
     height: auto;
 }
 
