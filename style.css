@@ -9,7 +9,6 @@ body {
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
-    padding-bottom: 20px;
 }
 
 .intro {
@@ -58,10 +57,16 @@ body {
 #logo-minicraft {
     max-width: 80vw;
     height: auto;
-    margin-bottom: 30px; /* Volvemos al espacio anterior */
+    margin-bottom: 20px; /* Espacio entre el logo y los botones */
 }
 
-.menu button {
+.botones-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
@@ -72,38 +77,38 @@ body {
     width: auto;
     height: auto;
     outline: none;
-    margin-top: 15px; /* Volvemos al espacio anterior */
-    margin-bottom: 15px; /* Volvemos al espacio anterior */
+    margin-top: 5px; /* Poco espacio entre botones */
+    margin-bottom: 5px; /* Poco espacio entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.menu button.slide-out {
+.botones-menu button.slide-out {
     transform: translateX(200%);
     opacity: 0;
 }
 
-.menu button:first-of-type {
+.botones-menu button:first-of-type {
     margin-top: 0;
 }
 
-.menu button:last-of-type {
+.botones-menu button:last-of-type {
     margin-bottom: 0;
 }
 
-.menu button:focus {
+.botones-menu button:focus {
     outline: none;
 }
 
-.menu button:active {
+.botones-menu button:active {
     opacity: 0.7;
 }
 
-.menu button:focus-visible {
+.botones-menu button:focus-visible {
     outline: 2px solid white;
     outline-offset: 2px;
 }
 
-.menu button:hover {
+.botones-menu button:hover {
     opacity: 0.9;
 }
 
@@ -160,24 +165,6 @@ body {
 
 #back-button img {
     max-width: 150px;
-    height: auto;
-    display: block;
-}
-
-#fullscreen-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline: none;
-    z-index: 3;
-}
-
-#fullscreen-button img {
-    max-width: 80px;
     height: auto;
     display: block;
 }
