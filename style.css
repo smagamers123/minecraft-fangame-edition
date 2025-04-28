@@ -70,7 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Espacio entre los grupos de botón y texto */
+    margin-bottom: 20px;
 }
 
 .boton-container:last-child {
@@ -120,14 +120,14 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 150px; /* Tamaño de los botones */
+    max-width: 150px;
     height: auto;
     display: block;
     user-select: none;
 }
 
 .fullscreen-button-img {
-    max-width: 60px; /* Tamaño del botón de pantalla completa */
+    max-width: 60px;
     height: auto;
     position: absolute;
     bottom: 20px;
@@ -152,7 +152,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Negro con 80% de opacidad */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
