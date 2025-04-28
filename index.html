@@ -14,28 +14,40 @@
         <div class="menu-content">
             <img src="assets/menu/minecraftfe.png" alt="Minicraft Logo" id="logo-minicraft">
             <div class="botones-menu">
-                <button id="jugar">
-                    <img src="assets/menu/boton_play.png" alt="Jugar" class="menu-button-img">
-                </button>
-                <button id="opciones">
-                    <img src="assets/menu/boton_play.png" alt="Opciones" class="menu-button-img">
-                </button>
-                <button id="salir">
-                    <img src="assets/menu/boton_play.png" alt="Salir" class="menu-button-img">
-                </button>
-                <button id="fullscreen-button-menu">
-                    <img src="assets/menu/fullscreen.png" alt="Pantalla Completa" class="menu-button-img">
-                </button>
+                <div class="boton-container">
+                    <div class="boton-texto">Jugar</div>
+                    <button id="jugar">
+                        <img src="assets/menu/boton_play.png" alt="Jugar" class="menu-button-img">
+                    </button>
+                </div>
+                <div class="boton-container">
+                    <div class="boton-texto">Marketplace</div>
+                    <button id="marketplace">
+                        <img src="assets/menu/boton_play.png" alt="Marketplace" class="menu-button-img">
+                    </button>
+                </div>
+                <div class="boton-container">
+                    <div class="boton-texto">Opciones</div>
+                    <button id="opciones">
+                        <img src="assets/menu/boton_play.png" alt="Opciones" class="menu-button-img">
+                    </button>
+                </div>
             </div>
+            <button id="fullscreen-button-menu">
+                <img src="assets/menu/fullscreen.png" alt="Pantalla Completa" class="fullscreen-button-img">
+            </button>
         </div>
     </div>
     <div id="game-container">
-        <button id="start-game-button">
-            <img src="assets/menu/boton_play.png" alt="Crear Mundo">
-        </button>
-        <button id="back-button">
-            <img src="assets/menu/crear_mundo/boton_retroceso.png" alt="Volver">
-        </button>
+        <div id="crear-mundo-overlay">
+            <div id="crear-mundo-texto">Crear Mundo</div>
+            <button id="start-game-button">
+                <img src="assets/menu/boton_play.png" alt="Crear Mundo">
+            </button>
+            <button id="back-button">
+                <img src="assets/menu/crear_mundo/boton_retroceso.png" alt="Volver">
+            </button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
