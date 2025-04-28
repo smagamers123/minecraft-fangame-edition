@@ -49,7 +49,6 @@ window.onload = function() {
                 setTimeout(() => {
                     menu.style.display = 'none';
                     gameContainer.style.display = 'flex';
-                    // No pausar la música aquí para que siga en la pantalla de crear mundo
                 }, 500);
             } else if (boton.id === 'opciones') {
                 alert('Opciones del juego');
