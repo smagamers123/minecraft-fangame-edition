@@ -6,16 +6,15 @@ window.onload = function() {
     const gameContainer = document.getElementById('game-container');
     const backButton = document.getElementById('back-button');
     const fullscreenButton = document.getElementById('fullscreen-button');
-
-    let botonPlayNormal = 'assets/menu/boton_play.png';
-    let botonPlayPresionado = 'assets/menu/boton_play_presionado.png';
-    let esperando = false;
+    const audioElement = new Audio('assets/menu/minecraft_song.mp3');
+    audioElement.loop = true; // Para que la música se repita
 
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
             intro.style.display = 'none';
             menu.style.display = 'flex';
+            audioElement.play(); // Iniciar la reproducción de la música al mostrar el menú
         }, 2000);
     }, 3000);
 
@@ -72,9 +71,9 @@ window.onload = function() {
         });
         menu.classList.remove('slide-out');
         menu.style.display = 'flex';
+        audioElement.play(); // Asegurar que la música siga reproduciéndose al volver al menú
     });
 
-    // Funcionalidad de pantalla completa
     fullscreenButton.addEventListener('click', () => {
         if (document.fullscreenElement) {
             document.exitFullscreen();
