@@ -6,10 +6,9 @@ body {
     background-position: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centrar verticalmente */
     min-height: 100vh;
     min-width: 100vw;
-    padding-bottom: 20px;
 }
 
 .intro {
@@ -56,9 +55,9 @@ body {
 }
 
 #logo-minicraft {
-    max-width: 80vw;
+    max-width: 600px; /* Logo grande */
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Espacio debajo del logo */
 }
 
 .menu button {
@@ -72,8 +71,8 @@ body {
     width: auto;
     height: auto;
     outline: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 15px; /* Espacio entre botones */
+    margin-bottom: 15px; /* Espacio entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -109,7 +108,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 80vw;
+    max-width: 600px; /* Botones grandes */
     height: auto;
     display: block;
     margin: 0 auto;
