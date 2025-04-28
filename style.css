@@ -9,6 +9,8 @@ body {
     align-items: center;
     min-height: 100vh;
     min-width: 100vw;
+    padding-bottom: 5vh; /* Un poco de espacio en la parte inferior para el botón de pantalla completa */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 .intro {
@@ -39,7 +41,11 @@ body {
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
-    width: auto;
+    width: 90vw; /* Ocupar un poco menos del ancho */
+    max-width: 600px; /* Ancho máximo */
+    height: 90vh; /* Ocupar un poco menos del alto */
+    max-height: 800px; /* Alto máximo */
+    justify-content: center; /* Centrar verticalmente los elementos internos */
 }
 
 .menu.slide-out {
@@ -52,25 +58,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around; /* Espaciar los elementos verticalmente */
 }
 
 #logo-minicraft {
-    max-width: 80vw;
+    max-width: 80%;
     height: auto;
-    margin-bottom: 30px;
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%; /* Ancho de los botones */
 }
 
 .boton-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Un poco menos de espacio entre botones */
+    width: 100%; /* Los contenedores de los botones ocupan todo el ancho disponible */
 }
 
 .boton-container:last-child {
@@ -78,22 +88,23 @@ body {
 }
 
 .boton-texto {
-    font-size: 1.2em;
-    margin-bottom: 5px;
+    font-size: 1.1em; /* Un poco más pequeño */
+    margin-bottom: 3px;
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 0;
+    padding: 10px 0; /* Un poco de padding vertical */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    width: auto;
+    width: 100%; /* Los botones ocupan todo el ancho de su contenedor */
     height: auto;
     outline: none;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
 }
 
 .botones-menu button.slide-out {
@@ -120,18 +131,20 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 150px;
+    max-width: 80%; /* Los iconos de los botones son más pequeños */
     height: auto;
     display: block;
+    margin: 0 auto;
     user-select: none;
 }
 
 .fullscreen-button-img {
-    max-width: 60px;
+    max-width: 50px;
     height: auto;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1vh; /* Pegado un poco más al borde inferior */
+    right: 1vw; /* Pegado un poco más al borde derecho */
+    z-index: 3; /* Asegurarse de que esté encima de otros elementos */
 }
 
 #game-container {
