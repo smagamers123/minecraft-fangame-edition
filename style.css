@@ -58,54 +58,42 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    justify-content: space-around;
-    padding: 5vh 0;
+    justify-content: center; /* Centrar verticalmente los elementos */
+    padding: 2vh 0; /* Reducir el padding vertical general */
     box-sizing: border-box;
 }
 
 #logo-minicraft {
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh; /* Reducir el margen inferior del logo */
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-}
-
-.boton-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2vh;
-    width: 100%;
-}
-
-.boton-container:last-child {
-    margin-bottom: 0;
-}
-
-.boton-texto {
-    font-size: 1em;
-    margin-bottom: 0.5vh;
+    width: 90%; /* Los botones ocupan más ancho */
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 1.5vh 0;
+    padding: 2vh 0; /* Aumentar el padding vertical de los botones */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    width: 100%;
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
     height: auto;
     outline: none;
+    margin-bottom: 0.5vh; /* Reducir el margen inferior entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     box-sizing: border-box;
+}
+
+.botones-menu button:last-child {
+    margin-bottom: 0; /* Eliminar el margen inferior del último botón */
 }
 
 .botones-menu button.slide-out {
@@ -132,7 +120,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 70%;
+    max-width: 90%; /* Hacer la imagen del botón más ancha */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -140,7 +128,7 @@ body {
 }
 
 .fullscreen-button-img {
-    max-width: 40px;
+    max-width: 5vw; /* Ajustar el tamaño del botón de pantalla completa */
     height: auto;
     position: absolute;
     bottom: 2vh;
@@ -185,7 +173,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 60%;
+    max-width: 80%; /* Agrandar el botón de "Crear Mundo" */
     height: auto;
 }
 
@@ -204,7 +192,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 25%;
+    max-width: 30%; /* Ajustar el tamaño del botón de retroceso */
 }
 
 #back-button img {
@@ -216,56 +204,45 @@ body {
 /* Estilos específicos para pantalla horizontal */
 @media (orientation: landscape) {
     .menu {
-        width: 90vh; /* Usar vh para el ancho en horizontal */
+        width: 90vh;
         max-width: 960px;
         height: auto;
-        max-height: 70vw; /* Usar vw para la altura en horizontal */
-        flex-direction: row; /* Disponer elementos en fila en horizontal */
-        align-items: center; /* Centrar verticalmente */
-        justify-content: space-around; /* Espaciar los elementos horizontalmente */
+        max-height: 70vw;
+        flex-direction: column; /* Mantener la dirección vertical en horizontal también */
+        align-items: center;
+        justify-content: center; /* Centrar verticalmente */
     }
 
     .menu-content {
-        flex-direction: column; /* Volver a columna para el logo y los botones */
+        flex-direction: column;
         align-items: center;
         width: auto;
         height: auto;
-        padding: 2vw; /* Ajustar padding */
+        padding: 2vw;
     }
 
     #logo-minicraft {
-        max-width: 60%; /* Logo más pequeño en horizontal */
-        margin-bottom: 2vw;
+        max-width: 70%;
+        margin-bottom: 1vw; /* Reducir el margen inferior en horizontal */
     }
 
     .botones-menu {
-        flex-direction: column; /* Botones en columna en horizontal */
-        width: 50%; /* Ancho de los botones */
-    }
-
-    .boton-container {
-        margin-bottom: 1vw;
-    }
-
-    .boton-texto {
-        font-size: 1vw; /* Tamaño de texto relativo al ancho */
-        margin-bottom: 0.3vw;
+        width: 70%; /* Reducir el ancho de los botones en horizontal */
     }
 
     .botones-menu button {
-        padding: 0.8vw 0;
+        padding: 1.5vw 0; /* Ajustar el padding vertical en horizontal */
+        margin-bottom: 0.3vw; /* Reducir el margen inferior en horizontal */
     }
 
     #boton-jugar-img,
     .menu-button-img {
-        max-width: 80%;
+        max-width: 90%; /* Mantener el ancho grande en horizontal */
     }
 
     .fullscreen-button-img {
         bottom: 2vw;
         right: 2vw;
-        max-width: 3vw;
+        max-width: 4vw; /* Ajustar el tamaño del botón de pantalla completa en horizontal */
     }
 }
-
-/* Puedes añadir más media queries para diferentes rangos de ancho y alto si es necesario */
