@@ -40,10 +40,10 @@ body {
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
-    width: 95vw; /* Ocupar un poco más del ancho en pantallas pequeñas */
-    max-width: 540px; /* Ancho máximo */
-    height: 95vh; /* Ocupar un poco más del alto en pantallas pequeñas */
-    max-height: 960px; /* Alto máximo */
+    width: 95vw; /* Usar más ancho en horizontal */
+    max-width: 960px; /* Ancho máximo para horizontal */
+    height: auto; /* Ajustar altura automáticamente */
+    max-height: 540px; /* Altura máxima para horizontal */
     justify-content: center;
 }
 
@@ -59,28 +59,28 @@ body {
     align-items: center;
     width: 100%;
     justify-content: space-around;
-    padding: 4vh 0; /* Reducir un poco el padding vertical */
+    padding: 3vw 0; /* Usar vw para padding vertical en horizontal */
     box-sizing: border-box;
 }
 
 #logo-minicraft {
-    max-width: 70%; /* Reducir un poco el tamaño del logo */
+    max-width: 60vw; /* Ancho máximo relativo al ancho */
     height: auto;
-    margin-bottom: 2vh;
+    margin-bottom: 1.5vw; /* Margen inferior relativo al ancho */
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%; /* Los botones ocupan más ancho */
+    width: 80%;
 }
 
 .boton-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1.5vh; /* Reducir el espacio entre botones */
+    margin-bottom: 1vw; /* Margen inferior relativo al ancho */
     width: 100%;
 }
 
@@ -89,15 +89,15 @@ body {
 }
 
 .boton-texto {
-    font-size: 0.9em; /* Reducir el tamaño del texto */
-    margin-bottom: 0.3vh;
+    font-size: 0.8em; /* Tamaño de texto relativo al ancho (podría ajustarse) */
+    margin-bottom: 0.2vw;
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 1.2vh 0; /* Reducir el padding vertical del botón */
+    padding: 0.8vw 0; /* Padding vertical relativo al ancho */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -132,7 +132,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 60%; /* Reducir el tamaño de los iconos de los botones */
+    max-width: 50vw; /* Ancho máximo del icono relativo al ancho */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -140,11 +140,11 @@ body {
 }
 
 .fullscreen-button-img {
-    max-width: 35px;
+    max-width: 3vw; /* Ancho máximo del botón de pantalla completa relativo al ancho */
     height: auto;
     position: absolute;
-    bottom: 1.5vh;
-    right: 1.5vw;
+    bottom: 1vw;
+    right: 1vw;
     z-index: 3;
 }
 
@@ -174,9 +174,9 @@ body {
 }
 
 #crear-mundo-texto {
-    font-size: 1.8em; /* Reducir el tamaño del texto */
+    font-size: 1.5vw; /* Tamaño de texto relativo al ancho */
     color: white;
-    margin-bottom: 2vh;
+    margin-bottom: 1vw;
 }
 
 #start-game-button {
@@ -185,7 +185,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 70%; /* Aumentar un poco el tamaño del botón */
+    max-width: 50vw; /* Ancho máximo relativo al ancho */
     height: auto;
 }
 
@@ -197,14 +197,14 @@ body {
 
 #back-button {
     position: absolute;
-    bottom: 2.5vh;
-    right: 2.5vw;
+    bottom: 2vw;
+    right: 2vw;
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 30%; /* Aumentar un poco el tamaño del botón */
+    max-width: 20vw; /* Ancho máximo relativo al ancho */
 }
 
 #back-button img {
