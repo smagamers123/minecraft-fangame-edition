@@ -6,11 +6,10 @@ body {
     background-position: center;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    align-items: center;
     min-height: 100vh;
     min-width: 100vw;
     box-sizing: border-box;
-    padding-bottom: 6vh; /* Espacio en la parte inferior para el botón de pantalla completa */
 }
 
 .intro {
@@ -41,10 +40,11 @@ body {
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
-    width: 90vw;
-    max-width: 600px;
-    height: auto; /* Ajustar la altura automáticamente */
-    margin-top: 5vh; /* Espacio desde la parte superior */
+    width: 95vw; /* Ocupar un poco más del ancho en pantallas pequeñas */
+    max-width: 540px; /* Ancho máximo */
+    height: 95vh; /* Ocupar un poco más del alto en pantallas pequeñas */
+    max-height: 960px; /* Alto máximo */
+    justify-content: center;
 }
 
 .menu.slide-out {
@@ -58,28 +58,29 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px 0; /* Añadir un poco de padding vertical */
+    justify-content: space-around;
+    padding: 4vh 0; /* Reducir un poco el padding vertical */
     box-sizing: border-box;
 }
 
 #logo-minicraft {
-    max-width: 80%;
+    max-width: 70%; /* Reducir un poco el tamaño del logo */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 90%; /* Los botones ocupan más ancho */
 }
 
 .boton-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px; /* Reducir aún más el espacio entre botones */
+    margin-bottom: 1.5vh; /* Reducir el espacio entre botones */
     width: 100%;
 }
 
@@ -88,15 +89,15 @@ body {
 }
 
 .boton-texto {
-    font-size: 1em; /* Reducir un poco el tamaño del texto */
-    margin-bottom: 2px;
+    font-size: 0.9em; /* Reducir el tamaño del texto */
+    margin-bottom: 0.3vh;
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 8px 0; /* Reducir el padding vertical */
+    padding: 1.2vh 0; /* Reducir el padding vertical del botón */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -131,7 +132,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 70%; /* Reducir aún más el tamaño de los iconos */
+    max-width: 60%; /* Reducir el tamaño de los iconos de los botones */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -139,11 +140,11 @@ body {
 }
 
 .fullscreen-button-img {
-    max-width: 40px;
+    max-width: 35px;
     height: auto;
     position: absolute;
-    bottom: 1vh;
-    right: 1vw;
+    bottom: 1.5vh;
+    right: 1.5vw;
     z-index: 3;
 }
 
@@ -173,9 +174,9 @@ body {
 }
 
 #crear-mundo-texto {
-    font-size: 2em;
+    font-size: 1.8em; /* Reducir el tamaño del texto */
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
 }
 
 #start-game-button {
@@ -184,7 +185,7 @@ body {
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 200px;
+    max-width: 70%; /* Aumentar un poco el tamaño del botón */
     height: auto;
 }
 
@@ -196,14 +197,14 @@ body {
 
 #back-button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2.5vh;
+    right: 2.5vw;
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
     outline: none;
-    max-width: 100px;
+    max-width: 30%; /* Aumentar un poco el tamaño del botón */
 }
 
 #back-button img {
