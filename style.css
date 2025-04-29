@@ -35,16 +35,18 @@ body {
     text-align: center;
     color: white;
     display: none;
-    flex-direction: column;
+    flex-direction: row; /* Cambiado a row para la disposición de izquierda y derecha */
     align-items: center;
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
-    width: 90vw;
-    max-width: 600px;
-    height: auto;
-    max-height: 80vh;
-    justify-content: center;
+    width: 95vw;
+    max-width: 900px;
+    height: 90vh;
+    max-height: 600px;
+    justify-content: space-between; /* Espacio entre izquierda y derecha */
+    padding: 2vw;
+    box-sizing: border-box;
 }
 
 .menu.slide-out {
@@ -52,48 +54,53 @@ body {
     opacity: 0;
 }
 
-.menu-content {
-    background-color: transparent;
+.menu-left {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    justify-content: center;
-    padding: 2vh 0;
-    box-sizing: border-box;
+    justify-content: center; /* Centrar logo y botones */
+    gap: 0.5vh; /* Poco espacio entre logo y botones */
+}
+
+.menu-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Pegar al borde derecho */
+    gap: 1vh; /* Espacio entre Steve y el botón */
+    margin-left: auto; /* Empujar al lado derecho */
 }
 
 #logo-minicraft {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
-    margin-bottom: 1vh;
 }
 
 .botones-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 70%; /* Botones más estrechos */
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 2.5vh 0; /* Aumentar un poco más el padding vertical */
+    padding: 1.5vh 0; /* Botones más pequeños verticalmente */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     width: 100%;
     height: auto;
     outline: none;
-    margin-bottom: 0; /* Eliminar el margen inferior entre botones */
+    margin-bottom: 0; /* Sin margen entre botones */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     box-sizing: border-box;
 }
 
 .botones-menu button:last-child {
-    margin-bottom: 0; /* Asegurarse de que el último botón también no tenga margen inferior */
+    margin-bottom: 0;
 }
 
 .botones-menu button.slide-out {
@@ -120,15 +127,24 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 90%;
+    max-width: 80%; /* Botones un poco más pequeños */
     height: auto;
     display: block;
     margin: 0 auto;
     user-select: none;
 }
 
+.menu-button-img.small {
+    max-width: 60%; /* Botón de crear cuenta más pequeño */
+}
+
+#steve-menu-img {
+    max-width: 80%;
+    height: auto;
+}
+
 .fullscreen-button-img {
-    max-width: 5vw;
+    max-width: 4vw;
     height: auto;
     position: absolute;
     bottom: 2vh;
@@ -144,36 +160,44 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
 }
 
 #crear-mundo-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 2vh;
+    box-sizing: border-box;
+    min-height: 100%; /* Asegurar que ocupe toda la altura para el scroll */
 }
 
 #crear-mundo-texto {
     font-size: 2em;
     color: white;
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
+}
+
+.noticias-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh; /* Espacio entre las imágenes de noticias */
+    margin-bottom: 2vh;
+}
+
+.noticias-container img {
+    max-width: 80%;
+    height: auto;
 }
 
 #start-game-button {
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: 1.5vh 3vw;
     cursor: pointer;
     outline: none;
-    max-width: 80%;
+    max-width: 60%;
     height: auto;
 }
 
@@ -184,15 +208,12 @@ body {
 }
 
 #back-button {
-    position: absolute;
-    bottom: 3vh;
-    right: 3vw;
     background-color: transparent;
     border: none;
-    padding: 0;
+    padding: 1vh 2vw;
     cursor: pointer;
     outline: none;
-    max-width: 30%;
+    max-width: 20%;
 }
 
 #back-button img {
@@ -204,45 +225,62 @@ body {
 /* Estilos específicos para pantalla horizontal */
 @media (orientation: landscape) {
     .menu {
-        width: 90vh;
-        max-width: 960px;
-        height: auto;
-        max-height: 70vw;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-    }
-
-    .menu-content {
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        height: auto;
+        justify-content: space-around;
         padding: 2vw;
     }
 
-    #logo-minicraft {
-        max-width: 70%;
-        margin-bottom: 0.5vw; /* Reducir aún más el margen del logo en horizontal */
+    .menu-left {
+        gap: 1vh;
     }
 
     .botones-menu {
-        width: 70%;
+        width: 60%;
     }
 
     .botones-menu button {
-        padding: 2vw 0; /* Aumentar el padding vertical en horizontal */
-        margin-bottom: 0; /* Eliminar el margen inferior en horizontal */
+        padding: 1.5vw 0;
     }
 
-    #boton-jugar-img,
-    .menu-button-img {
-        max-width: 90%;
+    #logo-minicraft {
+        max-width: 60%;
+    }
+
+    .menu-right {
+        gap: 1.5vh;
+    }
+
+    #steve-menu-img {
+        max-width: 70%;
     }
 
     .fullscreen-button-img {
         bottom: 2vw;
         right: 2vw;
-        max-width: 4vw;
+        max-width: 3vw;
+    }
+
+    #crear-mundo-overlay {
+        padding: 2vw;
+    }
+
+    .noticias-container {
+        gap: 0.5vw;
+        margin-bottom: 1vw;
+    }
+
+    .noticias-container img {
+        max-width: 60%;
+    }
+
+    #start-game-button {
+        padding: 1vw 2vw;
+        max-width: 50%;
+    }
+
+    #back-button {
+        padding: 0.8vw 1.5vw;
+        max-width: 15%;
     }
 }
