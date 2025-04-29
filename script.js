@@ -9,14 +9,14 @@ window.onload = function() {
     const startGameButton = document.getElementById('start-game-button');
     const backButton = document.getElementById('back-button');
     const fullscreenButtonMenu = document.getElementById('fullscreen-button-menu');
+    const crearCuentaButton = document.getElementById('crear-cuenta-button');
     const audioElement = new Audio('assets/menu/minecraft_song.mp3');
     audioElement.loop = true;
 
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
-            intro.style.display = 'none';
-            menu.style.display = 'flex';
+            intro.style.display = 'flex'; // Cambiado a flex para la nueva disposición
             audioElement.play().catch(error => console.error("Error al reproducir la música:", error));
         }, 2000);
     }, 3000);
@@ -44,8 +44,8 @@ window.onload = function() {
         });
     }
 
-    const botones = [jugarButton, marketplaceButton, opcionesButton];
-    botones.forEach(boton => {
+    const botonesPrincipales = [jugarButton, marketplaceButton, opcionesButton];
+    botonesPrincipales.forEach(boton => {
         const imgElement = boton.querySelector('.menu-button-img');
         cambiarEstadoBoton(boton, 'assets/menu/boton_play.png', 'assets/menu/boton_play_presionado.png', imgElement);
 
@@ -73,14 +73,4 @@ window.onload = function() {
         });
         menu.classList.remove('slide-out');
         menu.style.display = 'flex';
-        audioElement.play().catch(error => console.error("Error al reproducir la música:", error));
-    });
-
-    fullscreenButtonMenu.addEventListener('click', () => {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            document.documentElement.requestFullscreen();
-        }
-    });
-};
+        audioElement.play().catch(error
