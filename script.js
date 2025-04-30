@@ -16,7 +16,8 @@ window.onload = function() {
     setTimeout(() => {
         intro.style.opacity = 0;
         setTimeout(() => {
-            intro.style.display = 'flex'; // Cambiado a flex para la nueva disposición
+            intro.style.display = 'none'; // Ocultar la intro después de la transición
+            menu.style.display = 'flex';    // Mostrar el menú
             audioElement.play().catch(error => console.error("Error al reproducir la música:", error));
         }, 2000);
     }, 3000);
@@ -73,4 +74,32 @@ window.onload = function() {
         });
         menu.classList.remove('slide-out');
         menu.style.display = 'flex';
-        audioElement.play().catch(error
+        audioElement.play().catch(error => console.error("Error al reproducir la música:", error));
+    });
+
+    if (fullscreenButtonMenu) {
+        fullscreenButtonMenu.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    }
+
+    if (crearCuentaButton) {
+        crearCuentaButton.addEventListener('click', () => {
+            alert('Crear cuenta del jugador');
+            crearCuentaButton.blur();
+        });
+    }
+
+    if (startGameButton) {
+        startGameButton.addEventListener('click', () => {
+            alert('¡A jugar!');
+            startGameButton.blur();
+        });
+    }
+};
