@@ -35,16 +35,16 @@ body {
     text-align: center;
     color: white;
     display: none;
-    flex-direction: row; /* Cambiado a row para la disposición de izquierda y derecha */
+    flex-direction: column; /* Cambiado a columna para apilar elementos */
     align-items: center;
     z-index: 2;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     background-color: transparent;
     width: 95vw;
-    max-width: 900px;
+    max-width: 600px;
     height: 90vh;
     max-height: 600px;
-    justify-content: space-between; /* Espacio entre izquierda y derecha */
+    justify-content: space-between; /* Espacio entre logo/botones y la parte derecha */
     padding: 2vw;
     box-sizing: border-box;
 }
@@ -54,21 +54,27 @@ body {
     opacity: 0;
 }
 
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre la parte superior y el botón de pantalla completa */
+    width: 100%;
+    height: 100%;
+}
+
 .menu-left {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centrar logo y botones */
-    gap: 0.5vh; /* Poco espacio entre logo y botones */
+    gap: 1vh;
 }
 
-.menu-right {
+.menu-right-top {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Pegar al borde derecho */
-    gap: 1vh; /* Espacio entre Steve y el botón */
-    margin-left: auto; /* Empujar al lado derecho */
+    gap: 1vh;
 }
 
 #logo-minicraft {
@@ -80,21 +86,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%; /* Botones más estrechos */
+    width: 80%;
 }
 
 .botones-menu button {
     background-color: transparent;
     border: none;
     color: white;
-    padding: 1.5vh 0; /* Botones más pequeños verticalmente */
+    padding: 1.8vh 0; /* Ajustar tamaño vertical de los botones */
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     width: 100%;
     height: auto;
     outline: none;
-    margin-bottom: 0; /* Sin margen entre botones */
+    margin-bottom: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     box-sizing: border-box;
 }
@@ -127,7 +133,7 @@ body {
 
 #boton-jugar-img,
 .menu-button-img {
-    max-width: 80%; /* Botones un poco más pequeños */
+    max-width: 70%; /* Ajustar tamaño de imagen de botón */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -135,16 +141,16 @@ body {
 }
 
 .menu-button-img.small {
-    max-width: 60%; /* Botón de crear cuenta más pequeño */
+    max-width: 50%;
 }
 
 #steve-menu-img {
-    max-width: 80%;
+    max-width: 70%;
     height: auto;
 }
 
 .fullscreen-button-img {
-    max-width: 4vw;
+    max-width: 6vw; /* Ajustar tamaño botón pantalla completa */
     height: auto;
     position: absolute;
     bottom: 2vh;
@@ -160,7 +166,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10;
-    overflow-y: auto; /* Permitir desplazamiento vertical */
+    overflow-y: auto;
 }
 
 #crear-mundo-overlay {
@@ -169,36 +175,39 @@ body {
     align-items: center;
     padding: 2vh;
     box-sizing: border-box;
-    min-height: 100%; /* Asegurar que ocupe toda la altura para el scroll */
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
 }
 
 #crear-mundo-texto {
-    font-size: 2em;
+    font-size: 1.8em;
     color: white;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
 }
 
 .noticias-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Apilar verticalmente */
     align-items: center;
-    gap: 1vh; /* Espacio entre las imágenes de noticias */
+    gap: 1vh;
     margin-bottom: 2vh;
+    width: 80%; /* Ajustar ancho del contenedor de noticias */
 }
 
 .noticias-container img {
-    max-width: 80%;
+    max-width: 100%; /* Las imágenes ocupan el ancho del contenedor */
     height: auto;
 }
 
 #start-game-button {
     background-color: transparent;
     border: none;
-    padding: 1.5vh 3vw;
+    padding: 1.2vh 2vw;
     cursor: pointer;
     outline: none;
-    max-width: 60%;
+    max-width: 70%;
     height: auto;
+    margin-bottom: 1vh; /* Espacio entre el botón y las noticias */
 }
 
 #start-game-button img {
@@ -213,13 +222,48 @@ body {
     padding: 1vh 2vw;
     cursor: pointer;
     outline: none;
-    max-width: 20%;
+    max-width: 25%;
 }
 
 #back-button img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Ajustes adicionales para pantallas pequeñas */
+@media (max-width: 480px) {
+    .menu {
+        max-width: 95vw;
+        max-height: 80vh;
+        padding: 5vw;
+    }
+
+    #logo-minicraft {
+        max-width: 80%;
+    }
+
+    .botones-menu {
+        width: 90%;
+    }
+
+    #steve-menu-img {
+        max-width: 90%;
+    }
+
+    .fullscreen-button-img {
+        max-width: 8vw;
+        bottom: 3vh;
+        right: 3vw;
+    }
+
+    #crear-mundo-texto {
+        font-size: 1.5em;
+    }
+
+    .noticias-container {
+        width: 95%;
+    }
 }
 
 /* Estilos específicos para pantalla horizontal */
@@ -231,28 +275,30 @@ body {
         padding: 2vw;
     }
 
+    .menu-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .menu-left {
-        gap: 1vh;
+        align-items: center;
     }
 
-    .botones-menu {
-        width: 60%;
-    }
-
-    .botones-menu button {
-        padding: 1.5vw 0;
+    .menu-right-top {
+        align-items: center;
     }
 
     #logo-minicraft {
-        max-width: 60%;
+        max-width: 50%;
     }
 
-    .menu-right {
-        gap: 1.5vh;
+    .botones-menu {
+        width: 70%;
     }
 
     #steve-menu-img {
-        max-width: 70%;
+        max-width: 60%;
     }
 
     .fullscreen-button-img {
@@ -266,21 +312,18 @@ body {
     }
 
     .noticias-container {
-        gap: 0.5vw;
+        flex-direction: row; /* Mostrar en fila en horizontal (puedes cambiar a column si prefieres) */
+        gap: 1vw;
         margin-bottom: 1vw;
+        width: 90%;
+        justify-content: center; /* Centrar las imágenes en fila */
     }
 
     .noticias-container img {
-        max-width: 60%;
+        max-width: 30%; /* Ajustar ancho de las imágenes en fila */
     }
 
     #start-game-button {
-        padding: 1vw 2vw;
-        max-width: 50%;
-    }
-
-    #back-button {
-        padding: 0.8vw 1.5vw;
-        max-width: 15%;
+        margin-bottom: 0;
     }
 }
